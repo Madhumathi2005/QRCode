@@ -1,188 +1,126 @@
-/* Global Styles */
+/* General Reset */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #6dd5ed, #ffffff);
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
-.main-container {
-  display: flex;
-  justify-content: space-between; 
-  gap: 500px; 
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* App Container */
+/* Main Container */
 .app-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 900px;
+  width: 100%;
+  margin: 20px auto;
   padding: 20px;
-  background: #ffffff;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  overflow: hidden;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: none; /* Removed background box shadow */
+  box-sizing: border-box;
 }
 
-/* QR Generator Section */
+/* QR Generator */
 .qr-generator {
-  flex: 1;
-  padding: 30px;
-  background: #f9f9f9;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.qr-generator:hover {
-  transform: translateY(-5px);
-}
-
-.qr-generator h1 {
-  color: #1976d2;
-  font-size: 24px;
   text-align: center;
-  margin-bottom: 25px;
 }
 
-.form-group {
+/* QR Code Container */
+.qr-display {
+  text-align: center;
   margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 8px;
+/* Headings */
+h1, h2 {
+  text-align: center;
+  color: #4CAF50;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
-input {
+/* Form Input Fields */
+.form-group {
+  margin: 20px 0;
+}
+
+/* Input Fields and Selects */
+input[type="text"],
+input[type="number"] {
   width: 100%;
   padding: 12px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
+  margin: 10px 0;
   font-size: 16px;
-  transition: border-color 0.3s ease;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 
 input:focus {
   outline: none;
-  border-color: #1976d2;
-  box-shadow: 0 0 5px rgba(66, 165, 245, 0.5);
+  border: 1px solid #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
-.generate-btn {
-  width: 100%;
-  padding: 12px 0;
-  background: linear-gradient(90deg, #1976d2, #42a5f5);
-  border: none;
-  border-radius: 10px;
-  color: #ffffff;
+/* Buttons */
+button {
+  padding: 12px 24px;
+  margin: 10px 0;
   font-size: 16px;
-  font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s;
 }
 
-.generate-btn:hover {
-  background: linear-gradient(90deg, #1565c0, #1e88e5);
-  transform: translateY(-3px);
+button:hover {
+  background-color: #45a049;
 }
 
-.qr-display {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.qr-display img {
-  width: 150px;
-  height: 150px;
-  border: 5px solid #1976d2;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-}
-
-.qr-display img:hover {
-  transform: scale(1.1);
-}
-
+/* Download Button */
 .download-btn {
-  display: inline-block;
   text-decoration: none;
-  background: #1e88e5;
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: bold;
+  background-color: #4CAF50;
+  padding: 8px 16px;
   margin-top: 10px;
-  transition: background 0.3s ease, transform 0.2s ease;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 }
 
 .download-btn:hover {
-  background: #1565c0;
-  transform: translateY(-3px);
+  background-color: #45a049;
 }
 
-/* QR History Section */
-.qr-item {
-  text-align: center;
-  background: #ffffff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 15px;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
+/* History Section */
+.qr-history {
+  margin-top: 40px;
+}
+
+.qr-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.qr-item {
+  margin: 10px;
+  text-align: center;
 }
 
 .qr-item img {
-  width: 100px;
-  height: 100px;
+  max-width: 150px;
   margin-bottom: 10px;
-  border: 3px solid #33691e;
-  border-radius: 10px;
 }
 
-.qr-item p {
-  font-size: 12px;
-  color: #616161;
-  margin-bottom: 10px;
-  word-wrap: break-word;
-  word-break: break-all;
-}
-
-.download-btn-small {
-  font-size: 12px;
-  color: #33691e;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.download-btn-small:hover {
-  color: #2e7d32;
-  text-decoration: underline;
-}
-
-/* Ensure QR list items fit properly */
-.qr-list {
-  display: grid;
-  gap: 15px;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-}
-
-.qr-history {
-  max-width: 100%;
-  overflow: hidden;
+/* Mobile responsive design */
+@media (max-width: 768px) {
+  .qr-display img {
+    max-width: 100%; /* Make the QR code responsive on small screens */
+  }
 }

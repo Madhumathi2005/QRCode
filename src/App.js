@@ -21,6 +21,9 @@ const App = () => {
       {/* QR Code Generator */}
       <div className="qr-generator">
         <h1>QR Code Generator</h1>
+        <div className="qr-display">
+          {img && <img src={img} alt="Generated QR Code" />}
+        </div>
         <div className="form-group">
           <label>Data for QR Code:</label>
           <input
@@ -42,12 +45,9 @@ const App = () => {
           Generate QR Code
         </button>
         {img && (
-          <div className="qr-display">
-            <img src={img} alt="Generated QR Code" />
-            <a href={img} download="qrcode.png" className="download-btn">
-              Download
-            </a>
-          </div>
+          <a href={img} download="qrcode.png" className="download-btn">
+            Download
+          </a>
         )}
       </div>
 
