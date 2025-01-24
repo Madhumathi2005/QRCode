@@ -18,7 +18,7 @@ body {
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: none; /* Removed background box shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
@@ -64,10 +64,23 @@ input:focus {
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
+/* Radio Button Group */
+.form-group div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="radio"] {
+  margin: 0 5px;
+  transform: scale(1.2);
+}
+
 /* Buttons */
 button {
   padding: 12px 24px;
-  margin: 10px 0;
+  margin: 10px;  /* This margin adds space between the buttons */
   font-size: 16px;
   background-color: #4CAF50;
   color: white;
@@ -88,6 +101,7 @@ button:hover {
   background-color: #4CAF50;
   padding: 8px 16px;
   margin-top: 10px;
+  margin-bottom: 20px; /* Adding margin for spacing between buttons */
   border-radius: 6px;
   display: inline-block;
   transition: background-color 0.3s ease;
@@ -120,7 +134,27 @@ button:hover {
 
 /* Mobile responsive design */
 @media (max-width: 768px) {
+  /* QR code responsive */
   .qr-display img {
     max-width: 100%; /* Make the QR code responsive on small screens */
+  }
+
+  /* Make the form inputs responsive */
+  .form-group input[type="text"],
+  .form-group input[type="number"] {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Adjust button sizes for mobile */
+  button,
+  .download-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /* Adjust radio buttons size on small screens */
+  input[type="radio"] {
+    transform: scale(1);
   }
 }
